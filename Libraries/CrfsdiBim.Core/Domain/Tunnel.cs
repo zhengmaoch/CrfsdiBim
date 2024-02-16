@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace CrfsdiBim.Core.Domain
 {
-    public class Tunnel : BaseEntity, ISoftDeletedEntity, IsTimelyEntity, IsOrderedEntity
+    public class Tunnel : BaseEntity, IActiveEntity, ISoftDeletedEntity, ITimelyEntity, IOrderedEntity
     {
         [MaxLength(200)]
         [Required]
@@ -25,7 +25,7 @@ namespace CrfsdiBim.Core.Domain
         /// </summary>
         public string Description { get; set; }
 
-        [ForeignKey("Route")]
+        //[ForeignKey("Route")]
         /// <summary>
         /// Gets or sets a route identifier
         /// </summary>
@@ -42,24 +42,24 @@ namespace CrfsdiBim.Core.Domain
         public int DisplayOrder { get; set; }
 
         /// <summary>
-        /// Gets or sets a value indicating whether the book is active
+        /// Gets or sets a value indicating whether the active
         /// </summary>
-        public bool Active { get; set; }
+        public bool Active { get; set; } = true;
 
         /// <summary>
         /// Gets or sets a value indicating whether the entity has been deleted
         /// </summary>
-        public bool Deleted { get; set; }
+        public bool Deleted { get; set; } = false;
 
         /// <summary>
         /// Gets or sets the date and time of instance creation
         /// </summary>
-        public DateTime CreatedTime { get; set; }
+        public DateTime CreatedTime { get; set; } = DateTime.Now;
 
         /// <summary>
         /// Gets or sets the date and time of instance update
         /// </summary>
-        public DateTime UpdatedTime { get; set; }
+        public DateTime UpdatedTime { get; set; } = DateTime.Now;
 
         /// <summary>
         /// Gets or sets the route

@@ -24,26 +24,29 @@ namespace CrfsdiBim.Wpf.ViewModels
             _routeService = routeService;
             _tunnelService = tunnelService;
 
-            RouteModel route = new RouteModel();
-            route.Name = "route1";
-            route.Active = true;
-            route.Deleted = false;
-            route.CreatedTime = DateTime.Now;
-            route.UpdatedTime = DateTime.Now;
-            //RouteService.Add(route);
+            RouteModel routeModel = new RouteModel();
+            routeModel.Name = "route1";
+            routeModel.Active = true;
+            routeModel.Deleted = false;
+            routeModel.CreatedTime = DateTime.Now;
+            routeModel.UpdatedTime = DateTime.Now;
 
-            TunnelModel tunnel = new TunnelModel();
-            tunnel.Name = "tunnel1";
-            tunnel.Active = true;
-            tunnel.Deleted = false;
-            tunnel.CreatedTime = DateTime.Now;
-            tunnel.UpdatedTime = DateTime.Now;
-            //tunnel.RouteId = route.Id;
+            var route = Mapper.Map<Route>(routeModel);
+            _routeService.InsertRoute(route);
+
+            TunnelModel tunnelModel = new TunnelModel();
+            tunnelModel.Name = "tunnel1";
+            tunnelModel.Active = true;
+            tunnelModel.Deleted = false;
+            tunnelModel.CreatedTime = DateTime.Now;
+            tunnelModel.UpdatedTime = DateTime.Now;
+
+            var tunnel = Mapper.Map<Tunnel>(tunnelModel);
+
+            route = _routeService.GetRouteById(route.Id);
             tunnel.Route = route;
-            //TunnelService.Add(tunnel);
-
-            _routeService.InsertRoute(Mapper.Map<Route>(route));
-            _tunnelService.InsertTunnel(Mapper.Map<Tunnel>(tunnel));
+            tunnel.RouteId = route.Id;
+            _tunnelService.InsertTunnel(tunnel);
         }
 
 

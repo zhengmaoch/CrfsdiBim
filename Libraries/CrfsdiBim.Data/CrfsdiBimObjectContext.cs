@@ -1,6 +1,5 @@
 ﻿using CrfsdiBim.Core;
 using CrfsdiBim.Core.Domain;
-using CrfsdiBim.Data.Mapping;
 using SQLite.CodeFirst;
 using System;
 using System.Collections.Generic;

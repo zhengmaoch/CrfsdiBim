@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CrfsdiBim.Core.Common
 {
-    public partial interface IsOrderedEntity
+    public partial interface IOrderedEntity
     {
         /// <summary>
         /// Gets or sets the display order

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CrfsdiBim.Core.Common
 {
-    public partial interface IsTimelyEntity
+    public partial interface ITimelyEntity
     {
         /// <summary>
         /// Gets or sets the date and time of instance creation

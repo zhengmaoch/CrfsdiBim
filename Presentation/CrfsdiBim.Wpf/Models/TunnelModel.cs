@@ -1,4 +1,5 @@
 ﻿using CrfsdiBim.Core.Common;
+using CrfsdiBim.Wpf.Framework.Mvvm.Models;
 using Nop.Core.Domain.Common;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace CrfsdiBim.Core.Domain
 {
-    public class TunnelModel
+    public class TunnelModel : BaseModel
     {
         /// <summary>
         /// Gets or sets the book name

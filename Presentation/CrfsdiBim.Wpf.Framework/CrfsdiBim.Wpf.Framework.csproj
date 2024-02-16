@@ -44,6 +44,7 @@
     <Compile Include="Class1.cs" />
     <Compile Include="Infrastructure\DependencyRegistrar.cs" />
     <Compile Include="Infrastructure\Extensions\ServiceCollectionExtensions.cs" />
+    <Compile Include="Mvvm\Models\BaseModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

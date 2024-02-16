@@ -149,6 +149,10 @@
       <Project>{8f8de4e2-8784-4886-90bf-a9eb004dfd5e}</Project>
       <Name>CrfsdiBim.Services</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CrfsdiBim.Wpf.Framework\CrfsdiBim.Wpf.Framework.csproj">
+      <Project>{be04f96d-9eae-4ab7-bc3c-d47d6073ffe1}</Project>
+      <Name>CrfsdiBim.Wpf.Framework</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.8">
