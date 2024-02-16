@@ -27,8 +27,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrfsdiBim.Services.Tests", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrfsdiBim.Wpf.Mvvm.Tests", "Tests\CrfsdiBim.Wpf.Mvvm.Tests\CrfsdiBim.Wpf.Mvvm.Tests.csproj", "{3C95849E-BA23-4AD7-8E56-49E924827722}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{CE3A096E-EE73-4D9D-8819-182DC1BC04B4}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrfsdiBim.Wpf", "Presentation\CrfsdiBim.Wpf\CrfsdiBim.Wpf.csproj", "{DF2457E8-E59E-45AD-B5AF-79B6C2326D4F}"
 EndProject
 Global

@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using CrfsdiBim.Core.Domain;
-using CrfsdiBim.Core.Infrastructure.Mapper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CrfsdiBim.Wpf.Infrastructure.Mapper
 {
-    public class MapperProfile : Profile, IMapperProfile
+    public class MapperProfile : Profile
     {
 
         public MapperProfile() 
@@ -20,6 +19,5 @@ namespace CrfsdiBim.Wpf.Infrastructure.Mapper
             CreateMap<Tunnel, TunnelModel>();
             CreateMap<TunnelModel, Tunnel>();
         }
-        public int Order => 0;
     }
 }

@@ -49,22 +49,10 @@
     <Compile Include="Common\ITimelyEntity.cs" />
     <Compile Include="Common\ISoftDeletedEntity.cs" />
     <Compile Include="Configuration\CrfsdiBimConfig.cs" />
-    <Compile Include="Configuration\HostingConfig.cs" />
-    <Compile Include="Configuration\ISettings.cs" />
     <Compile Include="CrfsdiBimException.cs" />
     <Compile Include="Data\IRepository.cs" />
     <Compile Include="Domain\Tunnel.cs" />
     <Compile Include="Domain\Route.cs" />
-    <Compile Include="Infrastructure\AppDomainTypeFinder.cs" />
-    <Compile Include="Infrastructure\CrfsdiBimEngine.cs" />
-    <Compile Include="Infrastructure\DependencyManagement\IDependencyRegistrar.cs" />
-    <Compile Include="Infrastructure\EngineContext.cs" />
-    <Compile Include="Infrastructure\ICrfsdiBimStartup.cs" />
-    <Compile Include="Infrastructure\IEngine.cs" />
-    <Compile Include="Infrastructure\IStartupTask.cs" />
-    <Compile Include="Infrastructure\ITypeFinder.cs" />
-    <Compile Include="Infrastructure\Mapper\AutoMapperConfiguration.cs" />
-    <Compile Include="Infrastructure\Mapper\IMapperProfile.cs" />
     <Compile Include="Infrastructure\Singleton.cs" />
     <Compile Include="CrfsdiBimVersion.cs" />
     <Compile Include="IPagedList.cs" />
@@ -110,7 +98,8 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Plugins\" />
+    <Folder Include="Domain\Project\" />
+    <Folder Include="Domain\Structure\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
