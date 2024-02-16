@@ -44,9 +44,6 @@
     <Compile Include="EfRepository.cs" />
     <Compile Include="IDbContext.cs" />
     <Compile Include="CrfsdiBimObjectContext.cs" />
-    <Compile Include="Mapping\CrfsdiBimEntityTypeConfiguration.cs" />
-    <Compile Include="Mapping\TunnelMap.cs" />
-    <Compile Include="Mapping\RouteMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -65,9 +62,6 @@
     <PackageReference Include="System.Data.SQLite.Linq">
       <Version>1.0.118</Version>
     </PackageReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CrfsdiBim.Core\CrfsdiBim.Core.csproj">

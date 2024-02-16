@@ -13,11 +13,14 @@ namespace CrfsdiBim.Core.Domain
     {
         private ICollection<Tunnel> _tunnels;
 
+        [MaxLength(200)]
+        [Required]
         /// <summary>
         /// Gets or sets the name
         /// </summary>
         public string Name { get; set; }
 
+        [MaxLength(2000)]
         /// <summary>
         /// Gets or sets the description
         /// </summary>

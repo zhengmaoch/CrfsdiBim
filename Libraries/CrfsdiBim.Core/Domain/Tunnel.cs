@@ -3,6 +3,7 @@ using Nop.Core.Domain.Common;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,11 +12,20 @@ namespace CrfsdiBim.Core.Domain
 {
     public class Tunnel : BaseEntity, ISoftDeletedEntity, IsTimelyEntity, IsOrderedEntity
     {
+        [MaxLength(200)]
+        [Required]
         /// <summary>
-        /// Gets or sets the book name
+        /// Gets or sets the name
         /// </summary>
         public string Name { get; set; }
 
+        [MaxLength(2000)]
+        /// <summary>
+        /// Gets or sets the description
+        /// </summary>
+        public string Description { get; set; }
+
+        [ForeignKey("Route")]
         /// <summary>
         /// Gets or sets a route identifier
         /// </summary>
@@ -50,11 +60,6 @@ namespace CrfsdiBim.Core.Domain
         /// Gets or sets the date and time of instance update
         /// </summary>
         public DateTime UpdatedTime { get; set; }
-
-        /// <summary>
-        /// Gets or sets the Description
-        /// </summary>
-        public string Description { get; set; }
 
         /// <summary>
         /// Gets or sets the route

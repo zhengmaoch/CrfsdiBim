@@ -43,37 +43,34 @@ namespace CrfsdiBim.Data
         public DbSet<Tunnel> Tunnels { get; set; }
         public DbSet<Route> Routes { get; set; }
 
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            //使用SQLite.CodeFirst::SqliteCreateDatabaseIfNotExists进行创建数据库
-            var sqliteConnectionInitializer = new SqliteCreateDatabaseIfNotExists<CrfsdiBimObjectContext>(modelBuilder);
-            Database.SetInitializer(sqliteConnectionInitializer);
-        }
-
         /// <summary>
         /// On model creating
         /// </summary>
         /// <param name="modelBuilder">Model builder</param>
-        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        //{
-        //    //dynamically load all configuration
-        //    //System.Type configType = typeof(LanguageMap);   //any of your configuration classes here
-        //    //var typesToRegister = Assembly.GetAssembly(configType).GetTypes()
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            //dynamically load all configuration
+            //System.Type configType = typeof(LanguageMap);   //any of your configuration classes here
+            //var typesToRegister = Assembly.GetAssembly(configType).GetTypes()
 
-        //    var typesToRegister = Assembly.GetExecutingAssembly().GetTypes()
-        //    .Where(type => !string.IsNullOrEmpty(type.Namespace))
-        //    .Where(type => type.BaseType != null && type.BaseType.IsGenericType &&
-        //        type.BaseType.GetGenericTypeDefinition() == typeof(CrfsdiBimEntityTypeConfiguration<>));
-        //    foreach (var type in typesToRegister)
-        //    {
-        //        dynamic configurationInstance = Activator.CreateInstance(type);
-        //        modelBuilder.Configurations.Add(configurationInstance);
-        //    }
-        //    //...or do it manually below. For example,
-        //    //modelBuilder.Configurations.Add(new LanguageMap());
+            //var typesToRegister = Assembly.GetExecutingAssembly().GetTypes()
+            //.Where(type => !string.IsNullOrEmpty(type.Namespace))
+            //.Where(type => type.BaseType != null && type.BaseType.IsGenericType &&
+            //    type.BaseType.GetGenericTypeDefinition() == typeof(CrfsdiBimEntityTypeConfiguration<>));
+            //foreach (var type in typesToRegister)
+            //{
+            //    dynamic configurationInstance = Activator.CreateInstance(type);
+            //    modelBuilder.Configurations.Add(configurationInstance);
+            //}
+            ////...or do it manually below. For example,
+            ////modelBuilder.Configurations.Add(new LanguageMap());
 
-        //    base.OnModelCreating(modelBuilder);
-        //}
+            //base.OnModelCreating(modelBuilder);
+
+            //使用SQLite.CodeFirst::SqliteCreateDatabaseIfNotExists进行创建数据库
+            var sqliteConnectionInitializer = new SqliteCreateDatabaseIfNotExists<CrfsdiBimObjectContext>(modelBuilder);
+            Database.SetInitializer(sqliteConnectionInitializer);
+        }
 
         /// <summary>
         /// Attach an entity to the context or return an already attached entity (if it was already attached)
