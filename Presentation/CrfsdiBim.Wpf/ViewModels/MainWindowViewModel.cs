@@ -1,5 +1,7 @@
-﻿using CrfsdiBim.Core.Domain;
+﻿using AutoMapper;
+using CrfsdiBim.Core.Domain;
 using CrfsdiBim.Services;
+using CrfsdiBim.Wpf.Infrastructure.Mapper;
 using Prism.Mvvm;
 using System;
 
@@ -22,7 +24,7 @@ namespace CrfsdiBim.Wpf.ViewModels
             _routeService = routeService;
             _tunnelService = tunnelService;
 
-            Route route = new Route();
+            RouteModel route = new RouteModel();
             route.Name = "route1";
             route.Active = true;
             route.Deleted = false;
@@ -30,18 +32,18 @@ namespace CrfsdiBim.Wpf.ViewModels
             route.UpdatedTime = DateTime.Now;
             //RouteService.Add(route);
 
-            Tunnel tunnel = new Tunnel();
+            TunnelModel tunnel = new TunnelModel();
             tunnel.Name = "tunnel1";
             tunnel.Active = true;
             tunnel.Deleted = false;
             tunnel.CreatedTime = DateTime.Now;
             tunnel.UpdatedTime = DateTime.Now;
-            tunnel.RouteId = route.Id;
+            //tunnel.RouteId = route.Id;
             tunnel.Route = route;
             //TunnelService.Add(tunnel);
 
-            _routeService.InsertRoute(route);
-            _tunnelService.InsertTunnel(tunnel);
+            _routeService.InsertRoute(Mapper.Map<Route>(route));
+            _tunnelService.InsertTunnel(Mapper.Map<Tunnel>(tunnel));
         }
 
 

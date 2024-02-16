@@ -83,6 +83,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Bootstrapper.cs" />
+    <Compile Include="Infrastructure\Mapper\MapperProfile.cs" />
+    <Compile Include="Models\RouteModel.cs" />
+    <Compile Include="Models\TunnelModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -132,9 +135,7 @@
       <Version>8.1.97</Version>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\..\Libraries\CrfsdiBim.Core\CrfsdiBim.Core.csproj">
       <Project>{647353b3-d825-414b-937d-efb48bd57aa3}</Project>
