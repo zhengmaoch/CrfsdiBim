@@ -1,5 +1,5 @@
 ﻿using CrfsdiBim.Core.Common;
-using Nop.Core.Domain.Common;
+using CrfsdiBim.Core.Domain.Common;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;

@@ -1,4 +1,4 @@
-﻿namespace Nop.Core.Domain.Common
+﻿namespace CrfsdiBim.Core.Domain.Common
 {
     /// <summary>
     /// Represents a soft-deleted (without actually deleting from storage) entity
