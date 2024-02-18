@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 
 namespace CrfsdiBim.Data
 {
+    [DbConfigurationType(typeof(SQLiteConfiguration))]
     public class CrfsdiBimObjectContext : DbContext, IDbContext
     {
         #region Ctor
