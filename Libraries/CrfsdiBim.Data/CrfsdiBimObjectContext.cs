@@ -8,9 +8,6 @@ using System.Data.Common;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CrfsdiBim.Data
 {
@@ -19,7 +16,9 @@ namespace CrfsdiBim.Data
     {
         #region Ctor
 
-        public CrfsdiBimObjectContext() : base("ConnectionString") { }
+        public CrfsdiBimObjectContext() : base("ConnectionString")
+        {
+        }
 
         /// <summary>
         /// Ctor
@@ -36,7 +35,7 @@ namespace CrfsdiBim.Data
         {
         }
 
-        #endregion
+        #endregion Ctor
 
         #region Utilities
 
@@ -94,7 +93,7 @@ namespace CrfsdiBim.Data
             return alreadyAttached;
         }
 
-        #endregion
+        #endregion Utilities
 
         #region Methods
 
@@ -222,7 +221,7 @@ namespace CrfsdiBim.Data
             ((IObjectContextAdapter)this).ObjectContext.Detach(entity);
         }
 
-        #endregion
+        #endregion Methods
 
         #region Properties
 
@@ -256,6 +255,6 @@ namespace CrfsdiBim.Data
             }
         }
 
-        #endregion
+        #endregion Properties
     }
 }

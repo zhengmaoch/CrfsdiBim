@@ -1,12 +1,6 @@
-﻿using CrfsdiBim.Core.Common;
-using CrfsdiBim.Wpf.Framework.Mvvm.Models;
-using CrfsdiBim.Core.Domain.Common;
+﻿using CrfsdiBim.Wpf.Framework.Mvvm.Models;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CrfsdiBim.Core.Domain
 {
@@ -42,7 +36,7 @@ namespace CrfsdiBim.Core.Domain
         /// <summary>
         /// Gets or sets the date and time of instance creation
         /// </summary>
-        public DateTime CreatedTime { get; set; } 
+        public DateTime CreatedTime { get; set; }
 
         /// <summary>
         /// Gets or sets the date and time of instance update

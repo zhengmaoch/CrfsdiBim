@@ -2,7 +2,6 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CrfsdiBim.Core.Domain;
 using CrfsdiBim.Services;
-using CrfsdiBim.Wpf.Infrastructure.Mapper;
 using System;
 
 namespace CrfsdiBim.Wpf.ViewModels
@@ -10,14 +9,15 @@ namespace CrfsdiBim.Wpf.ViewModels
     public class MainWindowViewModel : ObservableObject
     {
         private string _title = "Prism Application";
+
         public string Title
         {
             get { return _title; }
             set { SetProperty(ref _title, value); }
         }
 
-        IRouteService _routeService;
-        ITunnelService _tunnelService;
+        private IRouteService _routeService;
+        private ITunnelService _tunnelService;
 
         public MainWindowViewModel(IRouteService routeService, ITunnelService tunnelService)
         {

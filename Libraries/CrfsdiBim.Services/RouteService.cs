@@ -3,10 +3,7 @@ using CrfsdiBim.Core.Domain;
 using CrfsdiBim.Data;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CrfsdiBim.Services
 {
@@ -17,7 +14,7 @@ namespace CrfsdiBim.Services
         private readonly IRepository<Route> _routeRepository;
         private readonly IDbContext _dbContext;
 
-        #endregion
+        #endregion Fields
 
         #region Ctor
 
@@ -33,7 +30,7 @@ namespace CrfsdiBim.Services
             this._dbContext = dbContext;
         }
 
-        #endregion
+        #endregion Ctor
 
         #region Methods
 
@@ -121,6 +118,6 @@ namespace CrfsdiBim.Services
             return query.ToList();
         }
 
-        #endregion
+        #endregion Methods
     }
 }

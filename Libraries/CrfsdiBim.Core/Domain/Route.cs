@@ -3,9 +3,6 @@ using CrfsdiBim.Core.Domain.Common;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CrfsdiBim.Core.Domain
 {
@@ -15,15 +12,9 @@ namespace CrfsdiBim.Core.Domain
 
         [MaxLength(200)]
         [Required]
-        /// <summary>
-        /// Gets or sets the name
-        /// </summary>
         public string Name { get; set; }
 
         [MaxLength(2000)]
-        /// <summary>
-        /// Gets or sets the description
-        /// </summary>
         public string Description { get; set; }
 
         /// <summary>

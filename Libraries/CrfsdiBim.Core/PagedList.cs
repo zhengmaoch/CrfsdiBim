@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CrfsdiBim.Core
 {
@@ -76,18 +74,22 @@ namespace CrfsdiBim.Core
         /// Page index
         /// </summary>
         public int PageIndex { get; }
+
         /// <summary>
         /// Page size
         /// </summary>
         public int PageSize { get; }
+
         /// <summary>
         /// Total count
         /// </summary>
         public int TotalCount { get; }
+
         /// <summary>
         /// Total pages
         /// </summary>
         public int TotalPages { get; }
+
         /// <summary>
         /// Has previous page
         /// </summary>
@@ -95,6 +97,7 @@ namespace CrfsdiBim.Core
         {
             get { return (PageIndex > 0); }
         }
+
         /// <summary>
         /// Has next page
         /// </summary>

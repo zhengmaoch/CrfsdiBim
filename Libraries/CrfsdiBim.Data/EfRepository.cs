@@ -1,12 +1,10 @@
-﻿using CrfsdiBim.Core.Data;
-using CrfsdiBim.Core;
+﻿using CrfsdiBim.Core;
+using CrfsdiBim.Core.Data;
 using System;
 using System.Collections.Generic;
-using System.Data.Entity.Validation;
 using System.Data.Entity;
+using System.Data.Entity.Validation;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CrfsdiBim.Data
 {
@@ -20,7 +18,7 @@ namespace CrfsdiBim.Data
         private readonly IDbContext _context;
         private IDbSet<T> _entities;
 
-        #endregion
+        #endregion Fields
 
         #region Ctor
 
@@ -33,7 +31,7 @@ namespace CrfsdiBim.Data
             this._context = context;
         }
 
-        #endregion
+        #endregion Ctor
 
         #region Utilities
 
@@ -73,7 +71,7 @@ namespace CrfsdiBim.Data
             return fullErrorText;
         }
 
-        #endregion
+        #endregion Utilities
 
         #region Methods
 
@@ -219,7 +217,7 @@ namespace CrfsdiBim.Data
             }
         }
 
-        #endregion
+        #endregion Methods
 
         #region Properties
 
@@ -258,6 +256,6 @@ namespace CrfsdiBim.Data
             }
         }
 
-        #endregion
+        #endregion Properties
     }
 }

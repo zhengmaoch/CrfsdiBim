@@ -1,12 +1,5 @@
-﻿using CrfsdiBim.Core.Common;
-using CrfsdiBim.Wpf.Framework.Mvvm.Models;
-using CrfsdiBim.Core.Domain.Common;
+﻿using CrfsdiBim.Wpf.Framework.Mvvm.Models;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CrfsdiBim.Core.Domain
 {

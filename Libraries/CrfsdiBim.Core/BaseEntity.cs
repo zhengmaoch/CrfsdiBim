@@ -8,15 +8,12 @@ namespace CrfsdiBim.Core
     /// </summary>
     public abstract partial class BaseEntity
     {
-        public BaseEntity() 
+        public BaseEntity()
         {
             Id = Guid.NewGuid().ToString();
         }
 
         [Key]
-        /// <summary>
-        /// Gets or sets the entity identifier
-        /// </summary>
         public string Id { get; set; }
 
         /// <summary>
@@ -108,4 +105,3 @@ namespace CrfsdiBim.Core
         }
     }
 }
-
