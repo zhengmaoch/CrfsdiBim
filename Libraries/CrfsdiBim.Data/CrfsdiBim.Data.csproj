@@ -50,10 +50,10 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="EntityFramework">
-      <Version>6.4.4</Version>
+      <Version>6.5.1</Version>
     </PackageReference>
     <PackageReference Include="SQLite.CodeFirst">
-      <Version>1.7.0.34</Version>
+      <Version>1.7.0.36</Version>
     </PackageReference>
     <PackageReference Include="System.Data.SQLite">
       <Version>1.0.118</Version>

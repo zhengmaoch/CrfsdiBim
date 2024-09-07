@@ -1,13 +1,13 @@
 ﻿using AutoMapper;
+using CommunityToolkit.Mvvm.ComponentModel;
 using CrfsdiBim.Core.Domain;
 using CrfsdiBim.Services;
 using CrfsdiBim.Wpf.Infrastructure.Mapper;
-using Prism.Mvvm;
 using System;
 
 namespace CrfsdiBim.Wpf.ViewModels
 {
-    public class MainWindowViewModel : BindableBase
+    public class MainWindowViewModel : ObservableObject
     {
         private string _title = "Prism Application";
         public string Title
@@ -52,7 +52,5 @@ namespace CrfsdiBim.Wpf.ViewModels
             tunnel.RouteId = route.Id;
             _tunnelService.InsertTunnel(tunnel);
         }
-
-
     }
 }
