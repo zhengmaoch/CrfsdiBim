@@ -6,7 +6,13 @@
 # 技术
 ##### Mvvm框架：CommunityToolkit.Mvvm
 ##### 依赖注入：Microsoft.Extensions.DependencyInjection
-##### 数据访问：EF6.0 + SQLite Codefirst + AutoMapper
+##### 数据访问：EF6.0 + SQLite CodeFirst + AutoMapper
 ##### UI组件：HandyControl
 ##### 依赖注入：Microsoft.Extensions.Hosting
-##### 日志：
+##### 日志：Serilog
+##### AutoCAD: IFoxCAD.Cad
+
+# EF CordFirst
+Enable-Migrations
+Add-Migration AddTable
+Update-Database
