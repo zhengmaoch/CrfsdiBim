@@ -2,13 +2,12 @@
 using System.Data.Entity.Infrastructure;
 using System.Data.SQLite;
 
-namespace CrfsdiBim.Data
+namespace CrfsdiBim.Data;
+
+public class SQLiteConnectionFactory : IDbConnectionFactory
 {
-    public class SQLiteConnectionFactory : IDbConnectionFactory
+    public DbConnection CreateConnection(string nameOrConnectionString)
     {
-        public DbConnection CreateConnection(string nameOrConnectionString)
-        {
-            return new SQLiteConnection(nameOrConnectionString);
-        }
+        return new SQLiteConnection(nameOrConnectionString);
     }
 }

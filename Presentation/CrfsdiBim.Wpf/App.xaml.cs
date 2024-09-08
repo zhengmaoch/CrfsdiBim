@@ -1,11 +1,12 @@
-﻿using CrfsdiBim.Wpf.ViewModels;
+﻿using CrfsdiBim.Core.Data;
+using CrfsdiBim.Data;
+using CrfsdiBim.Services.Projects;
+using CrfsdiBim.Wpf.ViewModels;
 using CrfsdiBim.Wpf.Views;
 using Microsoft.Extensions.DependencyInjection;
-using System.Net;
+using Serilog;
 using System;
 using System.Windows;
-using CrfsdiBim.Services;
-using Serilog;
 
 namespace CrfsdiBim.Wpf
 {
@@ -34,6 +35,8 @@ namespace CrfsdiBim.Wpf
                     .WriteTo.File("log.txt")
                     .CreateLogger();
             });
+            services.AddSingleton<IDbContextFactory, DbContextFactory>();
+            services.AddSingleton(typeof(IRepository<>), typeof(EfRepository<>));
             services.AddSingleton<IRouteService, RouteService>();
             services.AddSingleton<ITunnelService, TunnelService>();
             services.AddTransient<MainWindowViewModel>();

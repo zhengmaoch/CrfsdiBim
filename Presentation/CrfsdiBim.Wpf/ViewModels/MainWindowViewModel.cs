@@ -1,56 +1,67 @@
 ﻿using AutoMapper;
 using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using CrfsdiBim.Core.Domain;
-using CrfsdiBim.Services;
+using CrfsdiBim.Core.Domain.Projects;
+using CrfsdiBim.Services.Projects;
+using Serilog;
 using System;
 
 namespace CrfsdiBim.Wpf.ViewModels
 {
-    public class MainWindowViewModel : ObservableObject
+    public partial class MainWindowViewModel : ObservableObject
     {
-        private string _title = "Prism Application";
+        [ObservableProperty]
+        private string _title = "CommunityToolkit.Mvvm Application";
 
-        public string Title
-        {
-            get { return _title; }
-            set { SetProperty(ref _title, value); }
-        }
-
+        private ILogger _logger;
         private IRouteService _routeService;
         private ITunnelService _tunnelService;
 
-        public MainWindowViewModel(IRouteService routeService, ITunnelService tunnelService)
+        public MainWindowViewModel(ILogger logger, IRouteService routeService, ITunnelService tunnelService)
         {
+            _logger = logger;
             _routeService = routeService;
             _tunnelService = tunnelService;
+        }
 
-            RouteModel routeModel = new RouteModel
+        [RelayCommand]
+        public void Create()
+        {
+            try
             {
-                Name = "route1",
-                Active = true,
-                Deleted = false,
-                CreatedTime = DateTime.Now,
-                UpdatedTime = DateTime.Now
-            };
+                RouteModel routeModel = new RouteModel
+                {
+                    Name = "route1",
+                    Active = true,
+                    Deleted = false,
+                    CreatedTime = DateTime.Now,
+                    UpdatedTime = DateTime.Now
+                };
 
-            var route = Mapper.Map<Route>(routeModel);
-            _routeService.InsertRoute(route);
+                var route = Mapper.Map<Route>(routeModel);
+                _routeService.Insert(route);
 
-            TunnelModel tunnelModel = new TunnelModel
+                TunnelModel tunnelModel = new TunnelModel
+                {
+                    Name = "tunnel1",
+                    Active = true,
+                    Deleted = false,
+                    CreatedTime = DateTime.Now,
+                    UpdatedTime = DateTime.Now
+                };
+
+                var tunnel = Mapper.Map<Tunnel>(tunnelModel);
+
+                route = _routeService.GetById(route.Id);
+                tunnel.Route = route;
+                tunnel.RouteId = route.Id;
+                _tunnelService.Insert(tunnel);
+            }
+            catch (Exception ex)
             {
-                Name = "tunnel1",
-                Active = true,
-                Deleted = false,
-                CreatedTime = DateTime.Now,
-                UpdatedTime = DateTime.Now
-            };
-
-            var tunnel = Mapper.Map<Tunnel>(tunnelModel);
-
-            route = _routeService.GetRouteById(route.Id);
-            tunnel.Route = route;
-            tunnel.RouteId = route.Id;
-            _tunnelService.InsertTunnel(tunnel);
+                _logger.Error(ex, ex.Message);
+            }
         }
     }
 }

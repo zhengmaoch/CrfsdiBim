@@ -1,20 +1,33 @@
-﻿using System;
+﻿using CrfsdiBim.Core.Common;
+using CrfsdiBim.Core.Domain.Projects;
+using CrfsdiBim.Core.Infrastructure;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace CrfsdiBim.Core
 {
     /// <summary>
-    /// Represents the base class for entities
+    /// Base class for entities
     /// </summary>
     public abstract partial class BaseEntity
     {
         public BaseEntity()
         {
-            Id = Guid.NewGuid().ToString();
+            Id = SequentialGuidGenerator.Create().ToString();
         }
 
+        /// <summary>
+        /// Gets or sets the entity identifier
+        /// </summary>
         [Key]
+        [MaxLength(200)]
         public string Id { get; set; }
+
+        /// <summary>
+        /// Gets or sets the project identifier
+        /// </summary>
+        [MaxLength(200)]
+        public string ProjectId { get; set; } = Singleton<Project>.Instance?.Id;
 
         /// <summary>
         /// Is transient
@@ -23,7 +36,7 @@ namespace CrfsdiBim.Core
         /// <returns>Result</returns>
         private static bool IsTransient(BaseEntity obj)
         {
-            return obj != null && Equals(obj.Id, default(int));
+            return obj != null && Equals(obj.Id, default(string));
         }
 
         /// <summary>
@@ -77,7 +90,7 @@ namespace CrfsdiBim.Core
         /// <returns></returns>
         public override int GetHashCode()
         {
-            if (Equals(Id, default(int)))
+            if (Equals(Id, default(string)))
                 return base.GetHashCode();
             return Id.GetHashCode();
         }

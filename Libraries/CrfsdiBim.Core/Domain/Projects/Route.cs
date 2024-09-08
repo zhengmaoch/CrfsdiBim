@@ -3,9 +3,11 @@ using CrfsdiBim.Core.Domain.Common;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace CrfsdiBim.Core.Domain
+namespace CrfsdiBim.Core.Domain.Projects
 {
+    [Table("Route")]
     public class Route : BaseEntity, IActiveEntity, ISoftDeletedEntity, ITimelyEntity, IOrderedEntity
     {
         private ICollection<Tunnel> _tunnels;

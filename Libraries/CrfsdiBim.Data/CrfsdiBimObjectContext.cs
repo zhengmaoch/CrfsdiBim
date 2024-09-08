@@ -1,5 +1,5 @@
 ﻿using CrfsdiBim.Core;
-using CrfsdiBim.Core.Domain;
+using CrfsdiBim.Core.Domain.Projects;
 using SQLite.CodeFirst;
 using System;
 using System.Collections.Generic;
@@ -14,11 +14,11 @@ namespace CrfsdiBim.Data
     [DbConfigurationType(typeof(SQLiteConfiguration))]
     public class CrfsdiBimObjectContext : DbContext, IDbContext
     {
+        public string ConnectionString { get; set; }
+
         #region Ctor
 
-        public CrfsdiBimObjectContext() : base("ConnectionString")
-        {
-        }
+        //public CrfsdiBimObjectContext() : base("ConnectionString") { }
 
         /// <summary>
         /// Ctor
@@ -27,6 +27,7 @@ namespace CrfsdiBim.Data
         public CrfsdiBimObjectContext(string nameOrConnectionString)
             : base(nameOrConnectionString)
         {
+            ConnectionString = nameOrConnectionString;
             //((IObjectContextAdapter) this).ObjectContext.ContextOptions.LazyLoadingEnabled = true;
         }
 
@@ -39,8 +40,8 @@ namespace CrfsdiBim.Data
 
         #region Utilities
 
-        public DbSet<Tunnel> Tunnels { get; set; }
         public DbSet<Route> Routes { get; set; }
+        public DbSet<Tunnel> Tunnels { get; set; }
 
         /// <summary>
         /// On model creating
@@ -147,7 +148,7 @@ namespace CrfsdiBim.Data
 
             var result = Database.SqlQuery<TEntity>(commandText, parameters).ToList();
 
-            //performance hack applied as described here - https://www.nopcommerce.com/boards/t/25483/fix-very-important-speed-improvement.aspx
+            //performance hack applied as described here
             var acd = Configuration.AutoDetectChangesEnabled;
             try
             {

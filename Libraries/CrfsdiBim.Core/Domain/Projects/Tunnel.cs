@@ -2,9 +2,11 @@
 using CrfsdiBim.Core.Domain.Common;
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace CrfsdiBim.Core.Domain
+namespace CrfsdiBim.Core.Domain.Projects
 {
+    [Table("Tunnel")]
     public class Tunnel : BaseEntity, IActiveEntity, ISoftDeletedEntity, ITimelyEntity, IOrderedEntity
     {
         [MaxLength(200)]
@@ -14,7 +16,6 @@ namespace CrfsdiBim.Core.Domain
         [MaxLength(2000)]
         public string Description { get; set; }
 
-        //[ForeignKey("Route")]
         /// <summary>
         /// Gets or sets a route identifier
         /// </summary>
@@ -53,6 +54,7 @@ namespace CrfsdiBim.Core.Domain
         /// <summary>
         /// Gets or sets the route
         /// </summary>
+        [ForeignKey("Route")]
         public virtual Route Route { get; set; }
     }
 }

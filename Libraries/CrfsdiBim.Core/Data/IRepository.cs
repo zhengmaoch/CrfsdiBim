@@ -52,6 +52,11 @@ namespace CrfsdiBim.Core.Data
         void Delete(IEnumerable<T> entities);
 
         /// <summary>
+        /// Delete all entities
+        /// </summary>
+        void Delete();
+
+        /// <summary>
         /// Gets a table
         /// </summary>
         IQueryable<T> Table { get; }

@@ -48,11 +48,14 @@
     <Compile Include="Common\IOrderedEntity.cs" />
     <Compile Include="Common\ITimelyEntity.cs" />
     <Compile Include="Common\ISoftDeletedEntity.cs" />
+    <Compile Include="Common\SequentialGuidGenerator.cs" />
     <Compile Include="Configuration\CrfsdiBimConfig.cs" />
     <Compile Include="CrfsdiBimException.cs" />
     <Compile Include="Data\IRepository.cs" />
-    <Compile Include="Domain\Tunnel.cs" />
-    <Compile Include="Domain\Route.cs" />
+    <Compile Include="Domain\Projects\Project.cs" />
+    <Compile Include="Domain\Projects\RouteType.cs" />
+    <Compile Include="Domain\Projects\Tunnel.cs" />
+    <Compile Include="Domain\Projects\Route.cs" />
     <Compile Include="Infrastructure\Singleton.cs" />
     <Compile Include="CrfsdiBimVersion.cs" />
     <Compile Include="IPagedList.cs" />
@@ -85,10 +88,7 @@
       <Version>4.3.0</Version>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Domain\Project\" />
-    <Folder Include="Domain\Structure\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <LangVersion>preview</LangVersion>

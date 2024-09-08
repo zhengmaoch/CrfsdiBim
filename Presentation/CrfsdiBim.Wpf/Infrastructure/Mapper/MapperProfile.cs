@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using CrfsdiBim.Core.Domain;
+using CrfsdiBim.Core.Domain.Projects;
 
 namespace CrfsdiBim.Wpf.Infrastructure.Mapper
 {
