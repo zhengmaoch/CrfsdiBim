@@ -33,9 +33,9 @@ namespace CrfsdiBim.Data
         }
 
         // Using CodeFirst 用System.Data.SQLite::SQLiteConnection创建DbConnection进行构造初始化
-        //public CrfsdiBimObjectContext(DbConnection dbConnection, bool contextOwnsConnection = true) : base(dbConnection, true)
-        //{
-        //}
+        public CrfsdiBimObjectContext(DbConnection dbConnection, bool contextOwnsConnection = true) : base(dbConnection, true)
+        {
+        }
 
         #endregion Ctor
 

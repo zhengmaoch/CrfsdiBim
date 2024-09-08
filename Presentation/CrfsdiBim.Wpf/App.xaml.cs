@@ -1,6 +1,8 @@
-﻿using CrfsdiBim.Core.Data;
+﻿using AutoMapper;
+using CrfsdiBim.Core.Data;
 using CrfsdiBim.Data;
 using CrfsdiBim.Services.Projects;
+using CrfsdiBim.Wpf.Infrastructure.Mapper;
 using CrfsdiBim.Wpf.ViewModels;
 using CrfsdiBim.Wpf.Views;
 using Microsoft.Extensions.DependencyInjection;
@@ -21,6 +23,9 @@ namespace CrfsdiBim.Wpf
 
         public App()
         {
+            // AutoMapper Initialize
+            Mapper.Initialize(m => { m.AddProfile<MapperProfile>(); });
+
             Services = ConfigureServices();
         }
 

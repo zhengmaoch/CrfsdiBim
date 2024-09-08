@@ -49,6 +49,7 @@
     <Compile Include="Common\ITimelyEntity.cs" />
     <Compile Include="Common\ISoftDeletedEntity.cs" />
     <Compile Include="Common\SequentialGuidGenerator.cs" />
+    <Compile Include="Common\TimelyEntity.cs" />
     <Compile Include="Configuration\CrfsdiBimConfig.cs" />
     <Compile Include="CrfsdiBimException.cs" />
     <Compile Include="Data\IRepository.cs" />
@@ -56,6 +57,7 @@
     <Compile Include="Domain\Projects\RouteType.cs" />
     <Compile Include="Domain\Projects\Tunnel.cs" />
     <Compile Include="Domain\Projects\Route.cs" />
+    <Compile Include="Domain\Projects\TunnelType.cs" />
     <Compile Include="Infrastructure\Singleton.cs" />
     <Compile Include="CrfsdiBimVersion.cs" />
     <Compile Include="IPagedList.cs" />
