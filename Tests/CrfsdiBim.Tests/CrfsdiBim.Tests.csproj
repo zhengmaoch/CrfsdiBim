@@ -12,4 +12,11 @@
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.11.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="CrfsdiBim.Core.Tests\" />
+    <Folder Include="CrfsdiBim.Data.Tests\" />
+    <Folder Include="CrfsdiBim.Services.Tests\" />
+    <Folder Include="CrfsdiBim.Wpf.Tests\" />
+  </ItemGroup>
+
 </Project>

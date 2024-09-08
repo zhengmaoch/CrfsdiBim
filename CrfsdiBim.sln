@@ -19,19 +19,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrfsdiBim.Wpf.Framework", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrfsdiBim.Tests", "Tests\CrfsdiBim.Tests\CrfsdiBim.Tests.csproj", "{8BE905E1-15BA-4B11-9892-7569B94D8E36}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrfsdiBim.Core.Tests", "Tests\CrfsdiBim.Core.Tests\CrfsdiBim.Core.Tests.csproj", "{BB8AC02F-14C6-497B-8073-50D28D4F4DD1}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrfsdiBim.Data.Tests", "Tests\CrfsdiBim.Data.Tests\CrfsdiBim.Data.Tests.csproj", "{390F058D-520A-4599-A327-9ECC07FBD35A}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrfsdiBim.Services.Tests", "Tests\CrfsdiBim.Services.Tests\CrfsdiBim.Services.Tests.csproj", "{50D72E73-0AF8-4A29-A1A9-87A6390A7134}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrfsdiBim.Wpf.Mvvm.Tests", "Tests\CrfsdiBim.Wpf.Mvvm.Tests\CrfsdiBim.Wpf.Mvvm.Tests.csproj", "{3C95849E-BA23-4AD7-8E56-49E924827722}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrfsdiBim.Wpf", "Presentation\CrfsdiBim.Wpf\CrfsdiBim.Wpf.csproj", "{DF2457E8-E59E-45AD-B5AF-79B6C2326D4F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrfsdiBim.AutoCAD", "CrfsdiBim.AutoCAD\CrfsdiBim.AutoCAD.csproj", "{7DD36323-C928-4D37-B0B0-ED1617670CF3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrfsdiBim.AutoCAD", "Libraries\CrfsdiBim.AutoCAD\CrfsdiBim.AutoCAD.csproj", "{7DD36323-C928-4D37-B0B0-ED1617670CF3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrfsdiBim.Revit", "CrfsdiBim.Revit\CrfsdiBim.Revit.csproj", "{CC2344B5-6C7C-414A-83B9-34AA4A3F9C21}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrfsdiBim.Revit", "Libraries\CrfsdiBim.Revit\CrfsdiBim.Revit.csproj", "{CC2344B5-6C7C-414A-83B9-34AA4A3F9C21}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
