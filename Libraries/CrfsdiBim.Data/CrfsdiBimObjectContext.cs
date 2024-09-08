@@ -18,6 +18,7 @@ namespace CrfsdiBim.Data
 
         #region Ctor
 
+        // Using CodeFirst
         //public CrfsdiBimObjectContext() : base("ConnectionString") { }
 
         /// <summary>
@@ -31,10 +32,10 @@ namespace CrfsdiBim.Data
             //((IObjectContextAdapter) this).ObjectContext.ContextOptions.LazyLoadingEnabled = true;
         }
 
-        //用System.Data.SQLite::SQLiteConnection创建DbConnection进行构造初始化
-        public CrfsdiBimObjectContext(DbConnection dbConnection, bool contextOwnsConnection = true) : base(dbConnection, true)
-        {
-        }
+        // Using CodeFirst 用System.Data.SQLite::SQLiteConnection创建DbConnection进行构造初始化
+        //public CrfsdiBimObjectContext(DbConnection dbConnection, bool contextOwnsConnection = true) : base(dbConnection, true)
+        //{
+        //}
 
         #endregion Ctor
 

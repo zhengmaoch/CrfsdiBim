@@ -54,7 +54,7 @@ namespace CrfsdiBim.Core.Domain.Projects
         /// <summary>
         /// Gets or sets the route
         /// </summary>
-        [ForeignKey("Route")]
+        [ForeignKey("RouteId")]
         public virtual Route Route { get; set; }
     }
 }
