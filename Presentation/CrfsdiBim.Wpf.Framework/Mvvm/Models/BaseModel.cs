@@ -2,7 +2,6 @@
 using CrfsdiBim.Core.Common;
 using CrfsdiBim.Core.Domain.Projects;
 using CrfsdiBim.Core.Infrastructure;
-using System;
 
 namespace CrfsdiBim.Wpf.Framework.Mvvm.Models
 {

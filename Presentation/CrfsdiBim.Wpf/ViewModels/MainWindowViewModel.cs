@@ -4,13 +4,10 @@ using CommunityToolkit.Mvvm.Input;
 using CrfsdiBim.Core.Configuration;
 using CrfsdiBim.Core.Domain;
 using CrfsdiBim.Core.Domain.Projects;
-using CrfsdiBim.Core.Infrastructure;
 using CrfsdiBim.Data;
 using CrfsdiBim.Services.Projects;
 using Serilog;
 using System;
-using System.Data.Common;
-using System.Data.SQLite;
 using System.Windows.Forms;
 
 namespace CrfsdiBim.Wpf.ViewModels

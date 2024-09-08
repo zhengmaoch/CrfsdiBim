@@ -5,8 +5,8 @@
         Title="{Binding Title}" Height="350" Width="525">
     <Grid>
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-            <Button Content="初始化数据库" Command="{Binding DatabaseInitCommand}" Margin="5"/>
-            <Button Content="创建隧道" Command="{Binding CreateCommand}" Margin="5"/>
+            <Button Content="初始化数据库" Command="{Binding DatabaseInitCommand}" Margin="5" />
+            <Button Content="创建隧道" Command="{Binding CreateCommand}" Margin="5" />
         </StackPanel>
     </Grid>
 </Window>

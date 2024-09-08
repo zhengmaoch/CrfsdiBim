@@ -1,6 +1,5 @@
 ﻿using CrfsdiBim.Core.Domain.Projects;
 using CrfsdiBim.Wpf.Framework.Mvvm.Models;
-using System;
 
 namespace CrfsdiBim.Core.Domain
 {
