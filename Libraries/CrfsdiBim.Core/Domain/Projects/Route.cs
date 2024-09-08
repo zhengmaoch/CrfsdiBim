@@ -12,7 +12,7 @@ namespace CrfsdiBim.Core.Domain.Projects;
 /// 线路
 /// 一个项目来管理一条线路，一个线路可能有零或多个隧道。
 /// </summary>
-[Table($"{CrfsdiBimConfig.TablePrefix}Route")]
+//[Table($"{CrfsdiBimConfig.TablePrefix}Route")]
 [Serializable]
 public class Route : TimelyEntity, IActiveEntity, ISoftDeletedEntity, IOrderedEntity
 {

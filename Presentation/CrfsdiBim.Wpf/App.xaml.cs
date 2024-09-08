@@ -33,21 +33,28 @@ namespace CrfsdiBim.Wpf
         {
             var services = new ServiceCollection();
 
+            // Logger
             services.AddSingleton<ILogger>(_ =>
             {
                 return new LoggerConfiguration()
                 .MinimumLevel.Debug()
-                .WriteTo.File(@"Logs\Log.txt",
+                .WriteTo.File(@"Logs\Log_.txt",
                     rollingInterval: RollingInterval.Day,
                     shared: true,
                     retainedFileCountLimit: 31
                 )
                 .CreateLogger();
             });
+
+            // DbContext
             services.AddSingleton<IDbContextFactory, DbContextFactory>();
             services.AddSingleton(typeof(IRepository<>), typeof(EfRepository<>));
+
+            // Services
             services.AddSingleton<IRouteService, RouteService>();
             services.AddSingleton<ITunnelService, TunnelService>();
+
+            // View and ViewModel
             services.AddTransient<MainWindowViewModel>();
             services.AddTransient<MainWindow>(sp => new MainWindow { DataContext = sp.GetService<MainWindowViewModel>() });
 

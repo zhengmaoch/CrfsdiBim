@@ -10,7 +10,7 @@ namespace CrfsdiBim.Core.Domain.Projects
     /// <summary>
     /// 正洞隧道
     /// </summary>
-    [Table($"{CrfsdiBimConfig.TablePrefix}Tunnel")]
+    //[Table($"{CrfsdiBimConfig.TablePrefix}Tunnel")] // SQLite 不支持
     [Serializable]
     public class Tunnel : TimelyEntity, IActiveEntity, ISoftDeletedEntity, IOrderedEntity
     {

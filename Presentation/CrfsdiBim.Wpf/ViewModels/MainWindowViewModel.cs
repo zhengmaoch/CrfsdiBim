@@ -8,6 +8,8 @@ using CrfsdiBim.Data;
 using CrfsdiBim.Services.Projects;
 using Serilog;
 using System;
+using System.Data.Common;
+using System.Data.SQLite;
 using System.Windows.Forms;
 
 namespace CrfsdiBim.Wpf.ViewModels
@@ -31,28 +33,24 @@ namespace CrfsdiBim.Wpf.ViewModels
             _contextFactory = contextFactory;
         }
 
+        /// <summary>
+        /// 数据库CodeFirst初始化
+        /// 注意：SQLite不支持实体通过标签[Table("TableName")]修改表名
+        /// 只需要一个表中添加一条记录，所有的数据库结构就可以自动生成
+        /// </summary>
         [RelayCommand]
         public void DatabaseInit()
         {
             try
             {
-                //DbConnection dbConnection = new SQLiteConnection(CrfsdiBimConfig.ConnectionString);
                 var ctx = _contextFactory.CreateDbContext(CrfsdiBimConfig.ConnectionString);
-
-                Route route = new Route
-                {
-                    Name = "route1",
-                };
+                var routeModel = new RouteModel() { Name = "Route by Code First" };
+                var route = Mapper.Map<Route>(routeModel);
                 ctx.Routes.Add(route);
-
-                Tunnel tunnel = new Tunnel
-                {
-                    Name = "tunnel1",
-                    RouteId = route.Id
-                };
-                ctx.Tunnels.Add(tunnel);
-
                 ctx.SaveChanges();
+
+                _routeService.Delete(route);
+
                 MessageBox.Show("数据库初始化成功！");
             }
             catch (Exception ex)

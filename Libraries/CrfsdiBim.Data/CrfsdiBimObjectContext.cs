@@ -33,9 +33,9 @@ namespace CrfsdiBim.Data
         }
 
         // Using CodeFirst 用System.Data.SQLite::SQLiteConnection创建DbConnection进行构造初始化
-        //public CrfsdiBimObjectContext(DbConnection dbConnection, bool contextOwnsConnection = true) : base(dbConnection, true)
-        //{
-        //}
+        public CrfsdiBimObjectContext(DbConnection dbConnection, bool contextOwnsConnection = true) : base(dbConnection, true)
+        {
+        }
 
         #endregion Ctor
 
@@ -50,24 +50,6 @@ namespace CrfsdiBim.Data
         /// <param name="modelBuilder">Model builder</param>
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            //dynamically load all configuration
-            //System.Type configType = typeof(LanguageMap);   //any of your configuration classes here
-            //var typesToRegister = Assembly.GetAssembly(configType).GetTypes()
-
-            //var typesToRegister = Assembly.GetExecutingAssembly().GetTypes()
-            //.Where(type => !string.IsNullOrEmpty(type.Namespace))
-            //.Where(type => type.BaseType != null && type.BaseType.IsGenericType &&
-            //    type.BaseType.GetGenericTypeDefinition() == typeof(CrfsdiBimEntityTypeConfiguration<>));
-            //foreach (var type in typesToRegister)
-            //{
-            //    dynamic configurationInstance = Activator.CreateInstance(type);
-            //    modelBuilder.Configurations.Add(configurationInstance);
-            //}
-            ////...or do it manually below. For example,
-            ////modelBuilder.Configurations.Add(new LanguageMap());
-
-            //base.OnModelCreating(modelBuilder);
-
             //使用SQLite.CodeFirst::SqliteCreateDatabaseIfNotExists进行创建数据库
             var sqliteConnectionInitializer = new SqliteCreateDatabaseIfNotExists<CrfsdiBimObjectContext>(modelBuilder);
             Database.SetInitializer(sqliteConnectionInitializer);
