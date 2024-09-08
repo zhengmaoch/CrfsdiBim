@@ -35,10 +35,14 @@ namespace CrfsdiBim.Wpf
 
             services.AddSingleton<ILogger>(_ =>
             {
-                return new LoggerConfiguration().MinimumLevel
-                .Debug()
-                    .WriteTo.File("log.txt")
-                    .CreateLogger();
+                return new LoggerConfiguration()
+                .MinimumLevel.Debug()
+                .WriteTo.File(@"Logs\Log.txt",
+                    rollingInterval: RollingInterval.Day,
+                    shared: true,
+                    retainedFileCountLimit: 31
+                )
+                .CreateLogger();
             });
             services.AddSingleton<IDbContextFactory, DbContextFactory>();
             services.AddSingleton(typeof(IRepository<>), typeof(EfRepository<>));
