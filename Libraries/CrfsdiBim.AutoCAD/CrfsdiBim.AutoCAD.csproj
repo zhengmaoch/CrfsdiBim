@@ -43,12 +43,50 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.8.AssemblyAttributes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="IFoxCAD.Cad">
       <Version>0.4.0</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="obj\CrfsdiBim.AutoCAD.csproj.nuget.dgspec.json" />
+    <None Include="obj\CrfsdiBim.AutoCAD.csproj.nuget.g.props" />
+    <None Include="obj\CrfsdiBim.AutoCAD.csproj.nuget.g.targets" />
+    <None Include="obj\Debug\CrfsdiBi.4A55A018.Up2Date" />
+    <None Include="obj\Debug\CrfsdiBim.AutoCAD.csproj.AssemblyReference.cache" />
+    <None Include="obj\Debug\CrfsdiBim.AutoCAD.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\project.assets.json" />
+    <None Include="obj\project.nuget.cache" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="obj\Debug\CrfsdiBim.AutoCAD.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\CrfsdiBim.AutoCAD.dll" />
+    <Content Include="obj\Debug\CrfsdiBim.AutoCAD.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Blocks\" />
+    <Folder Include="Colors\" />
+    <Folder Include="Databases\" />
+    <Folder Include="Dimensions\" />
+    <Folder Include="Documents\" />
+    <Folder Include="Editors\" />
+    <Folder Include="Entities\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="Frames\" />
+    <Folder Include="Geometry\" />
+    <Folder Include="Layers\" />
+    <Folder Include="obj\Debug\TempPE\" />
+    <Folder Include="Plots\" />
+    <Folder Include="Prints\" />
+    <Folder Include="Runtime\" />
+    <Folder Include="Tables\" />
+    <Folder Include="Transforms\" />
+    <Folder Include="UI\" />
+    <Folder Include="ViewPorts\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
